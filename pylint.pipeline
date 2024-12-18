@@ -1,0 +1,31 @@
+- id: d99da07f-8b39-4881-9051-6a971be84c42
+  label: Setup Python
+  position:
+    x: 239
+    'y': 90
+  config:
+    pythonVersion: '3.8'
+  inputPort: ''
+  outputPort: 3c5d894f-754d-4039-80a2-1bc6a5c7fe8d
+  __class: SetupPythonNodeData
+- id: 3c5d894f-754d-4039-80a2-1bc6a5c7fe8d
+  label: Install Dependencies
+  position:
+    x: 240
+    'y': 168
+  config:
+    requirements: requirements.txt
+    additionalPackages: flask pandas numpy matplotlib
+  inputPort: d99da07f-8b39-4881-9051-6a971be84c42
+  outputPort: 94864302-8cab-48f1-a698-bf0efbbe2885
+  __class: InstallDependenciesNodeData
+- id: 94864302-8cab-48f1-a698-bf0efbbe2885
+  label: Run PyLint
+  position:
+    x: 241
+    'y': 242
+  config:
+    reportPath: pylint.log
+  inputPort: 3c5d894f-754d-4039-80a2-1bc6a5c7fe8d
+  outputPort: ''
+  __class: RunPyLintNodeData

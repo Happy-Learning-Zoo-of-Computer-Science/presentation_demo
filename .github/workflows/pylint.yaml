@@ -1,0 +1,24 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Python
+      run: echo "SetupPython"
+    - name: Install Dependencies
+      run: echo "InstallDependencies"
+    - name: Run PyLint
+      run: echo "RunPyLint"
+name: Python application
+'on':
+  pull_request:
+    branches:
+    - ''
+  push:
+    branches:
+    - ''
+  workflow_dispatch:
+    hello:
+      required: false
+permissions:
+  contents: read
